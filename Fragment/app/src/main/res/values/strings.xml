@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">tester </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_1">Button 1</string>
+    <string name="button">test implicit intent</string>
+    <string name="test_clock">test_clock</string>
+    <string name="test_click">test_click</string>
+    <string name="testbuttoninjava">testButtonInjava</string>
+</resources>

@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <!--use @+id/leftFrag(the name is not strict,random is could works too,the contents depends on the "name") (match up with the "layout_weight" to specify a weight in the screen width) to split the screen equally
+    a good idea is to watch the preview view window in the right(when you modify the value of the layout_weight,the division of the screen display differently-->
+    <fragment
+        android:id="@+id/leftFrag"
+        android:name="com.zjgsu.xcx.fragment.LeftFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+    <!--we can annotate the xml code like this:(in segment)-->
+<!--      <fragment-->
+<!--          android:id="@+id/rightFrag"-->
+<!--          android:name="com.zjgsu.xcx.fragment.RightFragment"-->
+<!--          android:layout_width="0dp"-->
+<!--          android:layout_height="match_parent"-->
+<!--          android:layout_weight="1" />-->
+    <FrameLayout
+        android:id="@+id/rightLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+</LinearLayout>

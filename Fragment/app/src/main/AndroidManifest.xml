@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zjgsu.xcx.fragment">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Fragment">
+        <!--declare the reciver(for broadcast)-->
+        <receiver android:name=".MyBroadcastReceiver"  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
+                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".testButtonInjava"
+            android:label="fragment">
+            <!--fake intent filter(just to test respondense-->
+            <intent-filter>
+                <action android:name="android.intent.action.SET_ALARM" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--
+        add activities in this part:(you can add several activities)with the activity tags
+        and use the intent tag to mark the main activity to be start firstly
+        -->
+        <activity android:name=".MainActivity"
+            android:label="main activity">
+            <!--fake intent filter(just to test respondense-->
+            <intent-filter>
+                <action android:name="android.intent.action.SET_ALARM" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> <!-- add (declare) another activity following : -->
+        <activity android:name=".FirstActivity">
+
+            <!-- mark the activity as the main activity as the application -->
+            <intent-filter>
+
+                <!--
+                in the intent-filter :you can define the name of the application and
+                the launch
+                -->
+                <!--
+                android.content.Intent
+                public static final String ACTION_MAIN = "android.intent.action.MAIN"
+                Activity Action: Start as a main entry point, does not expect to receive data.
+                Input: nothing
+                Output: nothing
+                -->
+                <action android:name="android.intent.action.MAIN" />
+                <!--
+                android.content.Intent public static final String CATEGORY_LAUNCHER = "android.intent.category.LAUNCHER"
+                Should be displayed in the top-level launcher
+                -->
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--
+                android.content.Intent
+                public static final String CATEGORY_DEFAULT = "android.intent.category.DEFAULT"
+                Set if the activity should be an option for the default action (center press) to perform on a piece of data.
+                Setting this will hide from the user any activities without it set when performing(execute) an action on some data. Note that this is normally -not- set in the Intent when initiating an action : it is for use in intent filters specified in packages.
+                -->
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
