@@ -7,7 +7,10 @@ import android.widget.EditText
 import java.io.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var messageText: EditText
+
+
+    private lateinit var messageText: EditText
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,7 +32,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun save(inputText: String) {
+
+
+    private fun save(inputText: String) {
         try {
             val output = openFileOutput("data", Context.MODE_PRIVATE)
             val writer = BufferedWriter(OutputStreamWriter(output))
@@ -47,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 //        editor.apply()
     }
 
-    fun load(): String {
+    private fun load(): String {
         val content = StringBuilder()
         try {
             val input = openFileInput("data")
@@ -55,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             reader.use{
                 reader.use{
                     reader.forEachLine {
-                        content.append(it)
+                        content.append(it+"\n")
                     }
                 }
             }
