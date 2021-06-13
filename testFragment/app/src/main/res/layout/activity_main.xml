@@ -16,7 +16,8 @@
 <!--        app:layout_constraintRight_toRightOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-<!--    fragment是具有自己的布局文件的,您可以在定义fragment的布局文件中修改fragment的呈现内容以及样式:-->
+<!--    fragment是具有自己的布局文件的,您可以在定义fragment的布局文件中修改fragment的呈现内容以及样式:
+注意,fragment标签是属于静态方式添加fragment-->
     <fragment
         android:id="@+id/leftFrag"
         android:name="com.zjgsu.cxxu.testfragment.LeftFragment"

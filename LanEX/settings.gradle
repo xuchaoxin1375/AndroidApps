@@ -1,0 +1,2 @@
+rootProject.name = "LanEX"
+include ':app'
